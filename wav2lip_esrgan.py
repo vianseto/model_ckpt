@@ -38,7 +38,7 @@ def gfpgan(id_path, filename, scale):
 	video_path = os.path.join(id_path,filename+".mp4")
 	audio_path = os.path.join(id_path,filename+".wav")
 	output_path = os.path.join(id_path,filename+"_upscale.mp4")
-	os.system("sudo mkdir "+upscale_path)
+	os.system(f"sudo mkdir {upscale_path}")
 
 	# Membuat frame dari video
 	os.system("sudo ffmpeg "+video_path+" -vf fps=30 "+upscale_path+"/frame/frame_%08d.jpg")
