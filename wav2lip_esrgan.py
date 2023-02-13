@@ -35,11 +35,12 @@ def gfpgan(id_path, filename, scale):
 	torch.cuda.empty_cache()
 	# Upscale temp Folder khusus filename
 	upscale_path = os.path.join(id_path,filename+"_upscale")
+	frame_path = os.path.join(upscale_path,"frame")
 	video_path = os.path.join(id_path,filename+".mp4")
 	audio_path = os.path.join(id_path,filename+".wav")
 	output_path = os.path.join(id_path,filename+"_upscale.mp4")
 	os.system(f"sudo mkdir {upscale_path}")
-	os.system(f"sudo mkdir {upscale_path}/frame")
+	os.system(f"sudo mkdir {frame_path}")
 
 	# Membuat frame dari video
 	os.system(f"sudo ffmpeg {video_path} -vf fps=30 {upscale_path}/frame/frame_%08d.jpg")
