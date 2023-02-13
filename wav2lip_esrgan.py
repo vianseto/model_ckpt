@@ -235,8 +235,6 @@ def avatar_video():
 				respond = {'msg': "fail to generate video, maybe because memory usage"}
 				return json.dumps(respond, indent=2)
 			else: 
-				os.system(f"sudo rm {wav_path}")
- 
 				if enhance:
 					try:
 						enhance_path = gfpgan(id_dir, filename, 2)
