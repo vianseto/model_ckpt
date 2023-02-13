@@ -34,10 +34,10 @@ def real_esrgan_video(video_path, output_path, scale):
 def gfpgan(id_path, filename, scale):
 	torch.cuda.empty_cache()
 	# Upscale temp Folder khusus filename
-	upscale_path = os.path.join(id_dir,filename+"_upscale")
-	video_path = os.path.join(id_dir,filename+".mp4")
-	audio_path = os.path.join(id_dir,filename+".wav")
-	output_path = os.path.join(id_dir,filename+"_upscale.mp4")
+	upscale_path = os.path.join(id_path,filename+"_upscale")
+	video_path = os.path.join(id_path,filename+".mp4")
+	audio_path = os.path.join(id_path,filename+".wav")
+	output_path = os.path.join(id_path,filename+"_upscale.mp4")
 	os.system("sudo mkdir "+upscale_path)
 
 	# Membuat frame dari video
