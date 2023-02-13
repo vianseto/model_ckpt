@@ -200,9 +200,9 @@ def avatar_video():
                 respond={'msg':'no audio specifed'} 
                 return json.dumps(respond, indent=2)
             elif (tts['text'] is None) and (tts['type'] is None):
-                wav_path = os.path.join(id_dir,filename+".wav")
-                wav_file = open(wav_path, "wb")
-                wav_file.write(audio)
+		wav_path = os.path.join(id_dir,filename+".wav")
+		wav_file = open(wav_path, "wb")
+		wav_file.write(audio)
 		try:
 			wavefile = wave.open(wav_path, 'r')
 			wavefile.close()
