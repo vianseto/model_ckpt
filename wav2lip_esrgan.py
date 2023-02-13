@@ -40,6 +40,7 @@ def gfpgan(id_path, filename, scale):
 	audio_path = os.path.join(id_path,filename+".wav")
 	output_path = os.path.join(id_path,filename+"_upscale.mp4")
 	os.system(f"sudo mkdir {upscale_path}")
+	os.system(f"sudo chmod -R a+w {upscale_path}")
 	os.system(f"sudo mkdir {frame_path}")
 
 	# Membuat frame dari video
