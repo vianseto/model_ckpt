@@ -43,7 +43,7 @@ def gfpgan(id_path, filename, scale):
 	os.system(f"sudo mkdir {frame_path}")
 
 	# Membuat frame dari video
-	os.system(f"sudo ffmpeg {video_path} -vf fps=30 {upscale_path}/frame/frame_%08d.jpg")
+	os.system(f"sudo ffmpeg -i {video_path} -vf fps=30 {frame_path}/frame_%08d.jpg")
 	os.system("python /data/server/GFPGAN/inference_gfpgan.py -i "+upscale_path+"/frame -o "+upscale_path+" -v 1.4 -s 2 --bg_upsampler realesrgan")
 
 	# Menggambungkan frame hasil
