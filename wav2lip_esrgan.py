@@ -48,7 +48,7 @@ def gfpgan(id_path, filename, scale):
 	os.system("sudo ffmpeg -framerate 30 -i "+upscale_path+"/restored_imgs/frame_%08d.jpg -i "+audio_path+" -c:v libx264 "+output_path)
 
 	# Hapus folder upscale
-	os.system("sudo rm -r "+upscale_path)
+	#os.system("sudo rm -r "+upscale_path)
 
 	return output_path
 
