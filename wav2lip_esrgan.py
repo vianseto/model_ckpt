@@ -236,12 +236,12 @@ def avatar_video():
 				return json.dumps(respond, indent=2)
 			else: 
 				if enhance:
-					try:
-						enhance_path = gfpgan(id_dir, filename, 2)
-						os.system("sudo mv -f "+enhance_path+" "+output_dir)
-					except:
-						respond = {'msg': "out of memory"}
-						return json.dumps(respond, indent=2)
+					#try:
+					enhance_path = gfpgan(id_dir, filename, 2)
+					os.system("sudo mv -f "+enhance_path+" "+output_dir)
+					#except:
+						#respond = {'msg': "out of memory"}
+						#return json.dumps(respond, indent=2)
 
 				with open(output_dir, 'rb') as open_file:
 					byte_video = open_file.read()
